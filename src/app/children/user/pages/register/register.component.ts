@@ -15,14 +15,19 @@ export class RegisterComponent implements OnInit {
     password : new FormControl("", Validators.required)
   });
 
+
+  /** Отсутствуют модификаторы доступа */
+  /** Отсутствуют тип возвращаемого значения */
   register(form : FormGroup){
     let registerStatus : Boolean;
+    /** Отсутствуют обработка ошибок */
     this.authService.register(form.value).subscribe(r => console.log(r));
     this.router.navigate(['profile/login'])
   }
 
   constructor(private authService : AuthService, private router : Router) { }
 
+  /** Зачем это тут */
   ngOnInit(): void {
   }
 

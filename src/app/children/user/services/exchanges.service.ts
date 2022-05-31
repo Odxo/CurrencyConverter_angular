@@ -9,6 +9,7 @@ export class ExchangesService {
 
   constructor(private http : HttpClient) { }
 
+  /** Отсутствуют тип возвращаемого значения */
   public get(token : String){
     let result : string[][] = [[], []];
     let result2 = new Subject<any[][]>();
@@ -19,6 +20,7 @@ export class ExchangesService {
       "Authorization" : "Token " + token
       };
 
+    /** Отсутствуют обработка ошибок */
     this.http.get(url, {headers: header}).subscribe(answer => {
       let data : any;
       data = answer;
@@ -34,6 +36,7 @@ export class ExchangesService {
 
   }
 
+  /** Отсутствуют тип возвращаемого значения */
   public post(currency1 : String, currency2 : String, token : String){
     let url = "http://127.0.0.1:8000/exchanges/"
     let header = {"Host" : "localhost:4200",
@@ -49,6 +52,7 @@ export class ExchangesService {
     this.http.post(url, body, {headers : header}).subscribe(answer => console.log(answer));
   }
 
+  /** Отсутствуют тип возвращаемого значения */
   public delete(currency1 : String, currency2 : String, token : String){
     let url = "http://127.0.0.1:8000/exchanges/"
     let header = {"Host" : "localhost:4200",
@@ -59,8 +63,9 @@ export class ExchangesService {
     let body = {
       "valute1" : currency1,
       "valute2" : currency2
-      };  
-    
+      };
+
+    /** Отсутствуют обработка ошибок */
     this.http.delete(url, {body : body, headers : header}).subscribe(answer => console.log(answer));
   }
 }

@@ -26,24 +26,36 @@ export class ProfileComponent implements OnInit {
   inputs : Number[] = [];
   inputs2 : Number[] = [];
 
+
+  /** Отсутствуют модификаторы доступа */
+  /** Отсутствуют тип возвращаемого значения */
   keyUp1(){
     for(let i = 0; i < this.inputs.length; i++){
       this.inputs2[i] = Number((Number(this.inputs[i]) * this.coeffiences[i]).toFixed(2));
     }
   }
 
+
+  /** Отсутствуют модификаторы доступа */
+  /** Отсутствуют тип возвращаемого значения */
   keyUp2(){
     for(let i = 0; i < this.inputs.length; i++){
       this.inputs[i] = Number((Number(this.inputs2[i]) / this.coeffiences[i]).toFixed(2));
     }
   }
 
+
+  /** Отсутствуют модификаторы доступа */
+  /** Отсутствуют тип возвращаемого значения */
   remove(event : Event){
     let elementId: number = Number((event.target as Element).id);
     this.exchangesService.delete(this.exchanges1[elementId], this.exchanges2[elementId], this.token);
     document.getElementById(elementId.toString()).remove();
   }
 
+
+  /** Отсутствуют модификаторы доступа */
+  /** Отсутствуют тип возвращаемого значения */
   exit(){
     this.authService.exit(this.cookieService.get("token"));
     this.cookieService.delete('token', '/');
@@ -53,6 +65,8 @@ export class ProfileComponent implements OnInit {
 
   constructor(private exchangesService : ExchangesService, private cookieService: CookieService, private authService : AuthService, private getValutes : GetValutesService, private router:Router) { }
 
+
+  /** Отсутствуют модификаторы доступа */
   ngOnInit(): void {
     this.getValutes.getValutes().subscribe(r => this.valutes = r);
     console.log(this.cookieService.get("token"));

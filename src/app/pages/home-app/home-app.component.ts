@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeAppComponent implements OnInit {
 
+  /** Зачем добавлен хук OnInit и пустой конструктор ? */
+
   constructor() { }
 
   ngOnInit(): void {

@@ -8,6 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class FeedbackComponent implements OnInit {
 
+  /** Форма есть, но мы с ней никак не работаем */
   public feedbackForm : FormGroup = new FormGroup({
     name : new FormControl("", Validators.required),
     email : new FormControl("", [Validators.email, Validators.required]),
