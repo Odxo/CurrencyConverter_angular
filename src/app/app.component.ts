@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  /** Отсутствует модификатор доступа */
   title = 'test-app';
 }

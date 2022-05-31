@@ -9,6 +9,7 @@ export class GetValutesService {
 
   constructor(private http : HttpClient) { }
 
+  /** Отсутствуют тип возвращаемого значения */
   public get(){
     let url = "https://www.cbr-xml-daily.ru/daily_json.js";
     return this.http.get(url) ;
